@@ -1,17 +1,17 @@
 travis:
   secure:
-    BINSTAR_TOKEN:
+    BINSTAR_TOKEN: dxeSdY2tdQTT0q6Nvs/MqB64gY8FxD25uhNyQZ7JRm4E7i/dj9Qs4UcwIUdIiv0IVlDVv//RXj6tU9ZiD984Xeww8KDHhGzrO+0xGAkj/EEUAg1D9ihi48uPYcDY1RhNwbFqZMeq7Y9PT5v8ix6AsiSwDIkCu3SLDYUDv3cai4tZ8WypNVT8K1rwGOcb6tXga3iNKLIbBhgiMEmMU2iSpCLxPp/HcnBKsxCD5bSmJK451nZ1x2gTzde+1PLYdIAgNhUKC397F2PSNbrcHvNN+p4DJf586wSxn8rO6a4ddEt9kD8xBgrSg5qP/qV9Ov37c9XaIcnGJ4dGnfYc9a8l+Hr3XYi32aDpMtV4M67/BFkHSHRiIxL1CThTNT8brJbY9J1kQE9Grvrm3e3BtYm0NgS4ZqXieR70Jb/UqmRnh6qL0GZ/THNBJ46qQ7hh3ZAgjjX6aclEdfhSpkP8lEZ5Yowo+TCWzLnJqN1P3yG0/DGF+luktORAIG0wiPvuagAnyTNar9S9bVIWOgwnRMR4r4vDyiXq/CoHfMcdT5rJsO4rppYp0xpOWYD9FuMPMz3vclj0zEC3bl+YLjPv1OH9G7dS6veQokNa7vT2fj/wo9hAIrBCLO2VDHPeQeRtT9Uojv/A+XEIxqaXdjTJbqSOk4ap7D4E1p9l6Ude5sq4yN8=
 appveyor:
   secure:
     BINSTAR_TOKEN:
 
 channels:
   sources:
-    - loopbio
-    - conda-forge
-    - defaults
+  - loopbio
+  - conda-forge
+  - defaults
   targets:
-    - [loopbio, main]
+  - [loopbio, main]
 
 github:
-  user_or_org: 'loopbio'
+  user_or_org: loopbio
