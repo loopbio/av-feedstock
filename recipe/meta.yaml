@@ -1,6 +1,11 @@
 {% set name = "av" %}
+
 {% set version = "0.3.3" %}
 {% set sha256 = "bb6a6abcae38087efe6eb4f8b29dcfbbb7b161b3177babb89fa754d9053e901c" %}
+
+# {% set version = "0.4.0dev0" %}
+# {% set commit = "770ded84147217d749c6aa8f6c0747b29fcfdcd4" %}
+# {% set sha256 = "545be4caa3665aaf963afdc2b52292fed292172c0ebb49fba4f2f30349137e6e" %}
 
 package:
   name: {{ name|lower }}
@@ -9,10 +14,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # url: https://github.com/mikeboers/PyAV/archive/{{ commit }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -22,10 +28,10 @@ requirements:
     - cython
     - pkg-config  # [not win]
     - msinttypes  # [win and py27]
-    - ffmpeg 3.2.*
+    - ffmpeg 3.3.*
   run:
     - python
-    - ffmpeg 3.2.*
+    - ffmpeg 3.3.*
     - pillow
     - numpy
 
@@ -47,7 +53,9 @@ about:
   dev_url: https://github.com/mikeboers/PyAV/
 
 extra:
-  recipe-maintainers:
+  upstream-recipe-maintainers:
     - danielballan
     - caspervdw
     - mikeboers
+  recipe-maintainers:
+    - sdvillal
