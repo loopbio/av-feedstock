@@ -28,12 +28,13 @@ requirements:
     - cython
     - pkg-config  # [not win]
     - msinttypes  # [win and py27]
-    - ffmpeg 3.3.*
+    - ffmpeg 3.3.3
   run:
     - python
-    - ffmpeg 3.3.*
+    - ffmpeg
     - pillow
     - numpy
+    - ffmpeg 3.3.3
 
 test:
   imports:
