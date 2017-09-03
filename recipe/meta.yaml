@@ -1,4 +1,5 @@
 {% set name = "av" %}
+{% set build_number = "3" %}
 
 {% set version = "0.3.3" %}
 {% set sha256 = "bb6a6abcae38087efe6eb4f8b29dcfbbb7b161b3177babb89fa754d9053e901c" %}
@@ -18,7 +19,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: {{ build_number }}
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
