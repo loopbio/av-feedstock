@@ -14,8 +14,7 @@ jobs:
             ./ci_support/fast_finish_ci_pr_build.sh
             ./ci_support/checkout_merge_commit.sh
       - run:
-          name: Pull the docker image
-          command: bash pull condaforge/linux-anvil
+          command: docker pull condaforge/linux-anvil
       - run:
           name: Print conda-build environment variables
           command: |
@@ -36,8 +35,7 @@ jobs:
             ./ci_support/fast_finish_ci_pr_build.sh
             ./ci_support/checkout_merge_commit.sh
       - run:
-          name: Pull the docker image
-          command: bash pull condaforge/linux-anvil
+          command: docker pull condaforge/linux-anvil
       - run:
           name: Print conda-build environment variables
           command: |
@@ -58,8 +56,7 @@ jobs:
             ./ci_support/fast_finish_ci_pr_build.sh
             ./ci_support/checkout_merge_commit.sh
       - run:
-          name: Pull the docker image
-          command: bash pull condaforge/linux-anvil
+          command: docker pull condaforge/linux-anvil
       - run:
           name: Print conda-build environment variables
           command: |
