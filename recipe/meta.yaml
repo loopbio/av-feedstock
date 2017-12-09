@@ -1,5 +1,5 @@
 {% set name = "av" %}
-{% set build_number = "3" %}
+{% set build_number = "4" %}
 
 {% set version = "0.3.3" %}
 {% set sha256 = "bb6a6abcae38087efe6eb4f8b29dcfbbb7b161b3177babb89fa754d9053e901c" %}
@@ -29,13 +29,12 @@ requirements:
     - cython
     - pkg-config  # [not win]
     - msinttypes  # [win and py27]
-    - ffmpeg 3.3.3
+    - ffmpeg 3.4
   run:
     - python
-    - ffmpeg
     - pillow
     - numpy
-    - ffmpeg 3.3.3
+    - ffmpeg 3.4
 
 test:
   imports:
@@ -55,9 +54,9 @@ about:
   dev_url: https://github.com/mikeboers/PyAV/
 
 extra:
-  upstream-recipe-maintainers:
+  recipe-maintainers:
+    - sdvillal
+  conda-forge-recipe-maintainers:
     - danielballan
     - caspervdw
     - mikeboers
-  recipe-maintainers:
-    - sdvillal
