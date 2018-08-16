@@ -17,14 +17,16 @@ details as much as possible.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/loopbio/av-feedstock.svg?style=shield)](https://circleci.com/gh/loopbio/av-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/loopbio/av-feedstock.svg?branch=master)](https://travis-ci.org/loopbio/av-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/loopbio/av-feedstock?svg=True)](https://ci.appveyor.com/project/loopbio/av-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/loopbio/av-feedstock/master.svg?label=Linux)](https://circleci.com/gh/loopbio/av-feedstock)
+![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/loopbio/av/badges/version.svg)](https://anaconda.org/loopbio/av)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/loopbio/av/badges/downloads.svg)](https://anaconda.org/loopbio/av)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-av-green.svg)](https://anaconda.org/loopbio/av) | [![Conda Downloads](https://img.shields.io/conda/dn/loopbio/av.svg)](https://anaconda.org/loopbio/av) | [![Conda Version](https://img.shields.io/conda/vn/loopbio/av.svg)](https://anaconda.org/loopbio/av) | [![Conda Platforms](https://img.shields.io/conda/pn/loopbio/av.svg)](https://anaconda.org/loopbio/av) |
 
 Installing av
 =============
@@ -67,7 +69,7 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string).
+   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string)
+   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
