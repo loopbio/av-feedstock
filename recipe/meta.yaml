@@ -1,12 +1,12 @@
 {% set name = "av" %}
-{% set build_number = "4" %}
+{% set build_number = "0" %}
 
-{% set version = "0.3.3" %}
-{% set sha256 = "bb6a6abcae38087efe6eb4f8b29dcfbbb7b161b3177babb89fa754d9053e901c" %}
+#{% set version = "0.4.0" %}
+#{% set sha256 = "" %}
 
-# {% set version = "0.4.0dev0" %}
-# {% set commit = "770ded84147217d749c6aa8f6c0747b29fcfdcd4" %}
-# {% set sha256 = "545be4caa3665aaf963afdc2b52292fed292172c0ebb49fba4f2f30349137e6e" %}
+{% set version = "0.4.1dev0" %}
+{% set commit = "78152dc06ce02e2b1fb7354ade115b4a62cc2577" %}
+{% set sha256 = "8e346a625cf29432f6e64c0c99ca523909f6594b9baca4013e0938ea53873353" %}
 
 package:
   name: {{ name|lower }}
@@ -14,27 +14,32 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  # url: https://github.com/mikeboers/PyAV/archive/{{ commit }}.tar.gz
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/mikeboers/PyAV/archive/{{ commit }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: {{ build_number }}
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  skip: True  # [not linux]
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
-    - python
-    - setuptools
-    - cython
+    - {{ compiler('c') }}
     - pkg-config  # [not win]
     - msinttypes  # [win and py27]
-    - ffmpeg 3.4
+  host:
+    - python
+    - pip
+    - cython
+    - numpy
+    - ffmpeg
+    - pillow 5
   run:
     - python
-    - pillow
-    - numpy
-    - ffmpeg 3.4
+    - {{ pin_compatible('numpy') }}
+    - ffmpeg
+    - pillow 5
 
 test:
   imports:
